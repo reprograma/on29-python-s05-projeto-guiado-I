@@ -15,6 +15,6 @@ Para ajudar-lo, ele nos pediu para que a gente criasse um pequeno programa em py
 <h1 align="center">
   <img src="../../assets/image.png" alt="logo reprograma" width="500">
 </h1>
-
+<hr>
 Sr. Miyagi agradece
 <hr>
