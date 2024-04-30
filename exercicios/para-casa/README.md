@@ -7,7 +7,7 @@
 Aqui vão as instruções do que fazer para arrasar no seu desafio:
 
 
-1. [ ] Use o dataset <b>dataset_casa</b> que se encontra no material adicional no classroom ou [no arquivo da pasta material](../../material/dataset_casa.py) e cole para o seu arquivo python - <b>assim como fizemos em aula, se lembra?</b>
+1. [x] Use o dataset <b>dataset_casa</b> que se encontra no material adicional no classroom ou [no arquivo da pasta material](../../material/dataset_casa.py) e cole para o seu arquivo python - <b>assim como fizemos em aula, se lembra?</b>
 2. [ ] Crie um menu que onde seja possível fazer as seguintes opções:
       - [ ] Adicionar um novo registro , contendo todos os dados necessários, <b>seguindo o modelo dos registros do dataset</b>
       - [ ] Calcular a receita do ano escolhido pelo usuário
@@ -22,8 +22,8 @@ Boa sorte!
 
 Terminou o exercício? Dá uma olhada nessa checklist e confere se tá tudo certinho, combinado?!
 
-- [ ] Fiz o fork do repositório.
-- [ ] Clonei o fork na minha máquina (`git clone url-do-meu-fork`).
+- [x] Fiz o fork do repositório.
+- [x] Clonei o fork na minha máquina (`git clone url-do-meu-fork`).
 - [ ] Resolvi o exercício.
 - [ ] Adicionei as mudanças. (`git add .` para adicionar todos os arquivos, ou `git add nome_do_arquivo` para adicionar um arquivo específico)
 - [ ] Commitei a cada mudança significativa ou na finalização do exercício (`git commit -m "Mensagem do commit"`)
