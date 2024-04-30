@@ -139,8 +139,6 @@ def receita_ano():
     print(f"O mês {mes_lucro}, foi o que teve mais lucro no ano.")
     print(f"O mês {mes_despesa}, foi o qual se teve maior despesa no ano.")
 
-# Mostrar qual ano teve a melhor receita e qual teve a pior
-
 
 def analise_ano():
     melhor_ano = 0
@@ -166,13 +164,3 @@ def analise_ano():
 
 menu()
 print("Fim do programa")
-
-'''
-2. [x] Crie um menu que onde seja possível fazer as seguintes opções:
-      - [x] Adicionar um novo registro , contendo todos os dados necessários, <b>seguindo o modelo dos registros do dataset</b>
-      - [x] Calcular a receita do ano escolhido pelo usuário
-         - [x] Exibir também qual foi o mês que teve mais lucro e o que teve mais despesa
-      - [ ] Mostrar qual ano teve a melhor receita e qual teve a pior
-      - [x] Uma opção de saída
-3. [x] Adicione uma condição para caso o usuário não digite uma opção válida no menu.
-'''
