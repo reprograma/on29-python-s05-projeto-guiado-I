@@ -86,21 +86,20 @@ def calculo_receita():
     print(f'No ano de {ano_escolhido}, a receita foi de R${receita_anual}.')
 
 def melhor_pior_receita():
-    ano_escolhido = int(input('Digite o ano que você deseja saber a receita: '))
     receita_maior = 0
     receita_menor = 0
 
     for el in dataset:
-        ano_el = (el.get('ano_receita'))
-        if ano_el == ano_escolhido:
-            receita = el.get('faturamento') - el.get('despesas')
-            if receita > receita_maior:
-                receita_maior = receita
-                mes_maior = el.get('mes_receita')
-            if receita < receita_menor:
-                receita_menor = receita
-                mes_menor = el.get('mes_receita')
-    print(f'A maior receita foi de R${receita_maior}, obtida no mês {mes_maior} do ano de {ano_escolhido}.')
-    print(f'A menor receita foi de R${receita_menor}, obtida no mês {mes_menor}, do ano de {ano_escolhido}.')
+        receita = el.get('faturamento') - el.get('despesas')
+        if receita > receita_maior:
+            receita_maior = receita
+            mes_maior = el.get('mes_receita')
+            ano_maior = el.get('ano_receita')
+        if receita < receita_menor:
+            receita_menor = receita
+            mes_menor = el.get('mes_receita')
+            ano_menor = el.get('ano_receita')
+    print(f'A melhor receita foi de R${receita_maior}, obtida no mês {mes_maior} do ano de {ano_maior}.')
+    print(f'A pior receita foi de R${receita_menor}, obtida no mês {mes_menor} do ano de {ano_menor}.')
                 
 menu()
