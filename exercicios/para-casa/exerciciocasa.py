@@ -1,4 +1,3 @@
-from operator import itemgetter
 
 
 dataset = [ 
@@ -114,19 +113,40 @@ def receita_ano():
     print(f"O mês com maior despesa foi: {maior_despesa} com despesa de R${despesa_max}")
                 
 def ano_melhor_pior_receita(): # aqui minha intenção é calcular o lucro liquido de cada ano e fazer um comparativo
+    maior_receita= 0
+    pior_receita= 0
+    for el in dataset:
+        receita= el.get("faturamento") - el.get("despesas")
+        maior_receita += receita
+        
+        if receita > maior_receita:
+            maior_receita= receita
+            ano_melhor_receita= el.get("ano_receita")
+        if receita < pior_receita:
+            pior_receita= receita
+            ano_pior_receita= el.get("ano_receita")
+            
+    print(f"A sua maior receita foi {maior_receita} em {ano_melhor_receita}")
+    print(f"A sua pior receita foi {pior_receita} em {ano_pior_receita}")
+        
+menu()
+
+
+
+""""
     lucroliq_total= {} # crio um dicionario vazio para chamar depois e armazenar os dados que serão calculados
     
     for el in dataset: #seguindo a mesma logica da prof
         ano= el.get("ano_receita")
-        lucroliq_ano= el.get("despesas") - el.get("faturamento")
+        lucroliq_ano= el.get("faturamento") - el.get("despesas")
         lucroliq_total[ano] = lucroliq_ano # agora armazeno no dicionário
         
         # ordenar os anos com base nas chaves "ano"(índice 0) e "lucro"(índice 1) armazenadas no dicionario lucroliq_total
-        anos_ordem_crescente = sorted(lucroliq_total.items(), key=itemgetter(1)) # ordenando com base no lucro (índice 1)
-    print("Ano em ordem crescente de receita:")
+        anos_ordem_crescente = sorted(lucroliq_total.items(), key=itemgetter(1), reverse=True) # ordenando com base no lucro (índice 1)
+    print("A ordem de receita do melhor ano para o pior é:")
         
-    for ano, lucroliq_total in anos_ordem_crescente:
-        print(f"Ano {ano}: R$ {lucroliq_total}")
+    for posicao, (ano, lucroliq_total) in enumerate(anos_ordem_crescente, start=1):
+        print(f"{posicao}° lugar: ano {ano} com R$ {lucroliq_total}")
         
     # Determinando o ano com a melhor e a pior receita
     melhor_ano = anos_ordem_crescente[-1][0]  # Pegando o último elemento da lista ordenada (melhor receita)
@@ -136,6 +156,4 @@ def ano_melhor_pior_receita(): # aqui minha intenção é calcular o lucro liqui
     
     print(f"\nO ano com a melhor receita foi: {melhor_ano} com um lucro total de: R${melhor_lucro}")
     print(f"O ano com a pior receita foi: {pior_ano} com um lucro total de: R${pior_lucro}")
-        
-        
-menu()
+"""
