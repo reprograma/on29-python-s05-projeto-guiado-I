@@ -51,9 +51,6 @@ def novo_registro():
         }) 
     
     print("Receita adicionada com sucesso!")
-# melhoria: opção de deletar ou editar um registro da lista 
-# melhoria: opção de visualizar todos os registros ou um registro em específico
-
 
 def calcular_receita():
     receita_total = 0
@@ -80,37 +77,47 @@ def calcular_receita():
     print("A receita total do ano", ano_input, "é de", receita_total)
     print("O mês", mes_receita_maior, "foi o mês com maior faturamento deste ano.")
     print("O mês", mes_receita_menor, "foi o mês com maior despesa deste ano.")
-# melhoria: formatar o valor da receita com R$ e vírgula/ponto
 
 def ranking():
+    ano_2022 = 2022
+    ano_2023 = 2023
+    ano_2024 = 2024
+    receita_2022 = 0
+    receita_2023 = 0
+    receita_2024 = 0
     receita_anual_maior = 0
     receita_anual_menor = 0
-    
+
+
     for item in dataset:
-        ano_2022 = 2022
-        ano_2023 = 2023
-        ano_2024 = 2024
-        receita_2022 = 0
-        receita_2023 = 0
-        receita_2024 = 0
         ano = item.get("ano_receita")
         receita = item.get("faturamento") - item.get("despesas")
-
+        
         if ano == ano_2022:
             receita_2022 += receita
-
         if ano == ano_2023:
             receita_2023 += receita
-
         if ano == ano_2024:
             receita_2024 += receita
 
+    if receita_2022 > receita_2023 and receita_2022 > receita_2024:
+        print("2022 foi o ano com maior receita.")
+    elif receita_2023 > receita_2022 and receita_2023 > receita_2024:
+        print("2023 foi o ano com maior receita.")
+    else:
+        print("2024 foi o ano com maior receita.")
+        
+    if receita_2022 < receita_2023 and receita_2022 < receita_2024:
+        print("2022 foi o ano com menor receita.")
+    elif receita_2023 < receita_2022 and receita_2023 < receita_2024:
+        print("2023 foi o ano com menor receita.")
+    else:
+        print("2024 foi o ano com menor receita.")
 
-    print("O ano de 2022, tem como receita total o valor de", receita_2022)
-    print("O ano de 2023, tem como receita total o valor de", receita_2023)
-    print("O ano de 2024, tem como receita total o valor de", receita_2024)
-    print("O ano com maior receita foi o de" )
-         
+    print("Receita de 2022:", receita_2022)
+    print("Receita de 2023:", receita_2023)
+    print("Receita de 2024:", receita_2024)
+    
 def menu():
         print("----- MENU -----")
         print("Adicionar novo registro - 1")
@@ -126,9 +133,10 @@ def menu():
         elif selection == 3:
             ranking()
         elif selection == 0:
-            print("Programa finalizado")
+            print("Programa finalizado.")
         else:
             selection = int(input("Opção inválida. Por favor, digite novamente:" ))
+
 
 menu()
 
