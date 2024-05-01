@@ -137,4 +137,5 @@ def ano_melhor_pior_receita(): # aqui minha intenção é calcular o lucro liqui
     print(f"\nO ano com a melhor receita foi: {melhor_ano} com um lucro total de: R${melhor_lucro}")
     print(f"O ano com a pior receita foi: {pior_ano} com um lucro total de: R${pior_lucro}")
         
+        
 menu()
