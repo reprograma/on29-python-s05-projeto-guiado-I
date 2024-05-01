@@ -134,8 +134,9 @@ def menu():
             ranking()
         elif selection == 0:
             print("Programa finalizado.")
+    
         else:
-            selection = int(input("Opção inválida. Por favor, digite novamente:" ))
+            selection = int(input("Opção inválida." ))
 
 
 menu()
