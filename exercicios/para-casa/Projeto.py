@@ -89,14 +89,14 @@ def AddData(): # Adicionando um novo registro
     print("Novo registro adicionado com sucesso.")
     print_dataset()
 
-# Calcular a receita do ano escolhido pelo usuário
-def CalcBill():
+
+def CalcBill(): # Calculando a receita por ano 
     ano = int(input("Digite o ano que deseja calcular a receita: "))
     receita_ano = sum(item['faturamento'] - item['despesas'] for item in dataset if item['ano_receita'] == ano)
     print(f"A receita do ano {ano} é: {receita_ano}\n")
 
-# Mês com mais lucro e mais despesa
-def HighProfitExpenseMonth():
+
+def HighProfitExpenseMonth(): # Mês com mais lucro e mais despesa
     lucro_maximo = 0
     mes_lucro_maximo = ''
     despesa_maxima = 0
@@ -105,12 +105,10 @@ def HighProfitExpenseMonth():
     for item in dataset:
         lucro = item['faturamento'] - item['despesas']
         
-        # Verificando se o lucro do item é maior que o máximo registrado até agora
         if lucro > lucro_maximo:
             lucro_maximo = lucro
             mes_lucro_maximo = item['mes_receita']
 
-        # Verificando se as despesas do item são maiores que as registradas até agora
         if item['despesas'] > despesa_maxima:
             despesa_maxima = item['despesas']
             mes_despesa_maxima = item['mes_receita']
@@ -118,8 +116,8 @@ def HighProfitExpenseMonth():
     print(f"O mês com maior lucro foi: {mes_lucro_maximo}")
     print(f"O mês com maior despesa foi: {mes_despesa_maxima}")
 
-# Mostrando o ano com melhor e pior receita
-def BestWorstRevenueYear():
+
+def BestWorstRevenueYear(): # Ano com melhor e pior receita
     receita_por_ano = {}
     for item in dataset:
         ano = item['ano_receita']
@@ -134,8 +132,8 @@ def BestWorstRevenueYear():
     print(f"O ano com melhor receita foi: {ano_melhor_receita}")
     print(f"O ano com pior receita foi: {ano_pior_receita}")
 
-# Excluir um registro do sistema usando o identificador único
-def DropSyst():
+
+def DropSyst():  # Excluindo um registro por meio do ID
     id_registro = int(input("Digite o ID do registro que deseja excluir: "))
     for item in dataset:
         if item['id'] == id_registro:
