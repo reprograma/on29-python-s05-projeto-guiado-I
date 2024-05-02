@@ -71,7 +71,7 @@ def adicionar_registro():
 #Foi preciso transformar o range de 1-12 em string pois na lista de dicionários a chave "mes_receita" tem valor em formato string.
         print("MÊS INVÁLIDO. Digite um mês entre janeiro e dezembro, do 1 ao 12:")
         return adicionar_registro()
-#aqui esse bloco if retorna pra função adicionar_registro() pq não consegui retornar pro input da variável "mes", nas vexes q tentei retornava pro menu inicial ou dava erro
+#aqui esse bloco if retorna pra função adicionar_registro() pq não consegui retornar pro input da variável "mes", nas vezes q tentei retornava pro menu inicial ou dava erro
 
     faturamento = int(input("Digite o lucro neste mês: "))
     despesas = int(input("Digite os gastos deste mês: "))
