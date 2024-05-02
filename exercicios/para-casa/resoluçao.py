@@ -133,6 +133,6 @@ def calcular_receita_geral(): #Mostrar qual ano teve a melhor receita e qual tev
                 ano_menor_lucro = lucro_liquido
                 ano_pior_lucro = item.get("ano_receita")        
 
-    print(f"O {ano_melhor_lucro} foi o ano de maior lucro até a presente data. E o ano {ano_pior_lucro} foi o de maior despesa.")
+    print(f"O {ano_melhor_lucro} foi o ano de maior lucro até a presente data. E o ano {ano_pior_lucro} foi o de pior lucro.")
 
 menu()
