@@ -1,4 +1,3 @@
-
 dataset = [
     {'ano': 2022, 'mes': '1', 'lucro': 21003, 'gastos': 18600},
     {'ano': 2022, 'mes': '2', 'lucro': 31717, 'gastos': 54851},
