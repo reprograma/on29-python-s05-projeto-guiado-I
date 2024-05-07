@@ -1,3 +1,4 @@
+<<<<ai
 dataset = [
     {'ano': 2022, 'mes': '1', 'lucro': 21003, 'gastos': 18600},
     {'ano': 2022, 'mes': '2', 'lucro': 31717, 'gastos': 54851},
@@ -37,27 +38,11 @@ dataset = [
     {'ano': 2024, 'mes': '12', 'lucro': 25698, 'gastos': 51182},
 ]
 
-# 1. Criar o menu para que o Sr. Miyagi consiga interagir e indicar o mês em que ele quer saber o faturamento
-# 2. Criar a função de calcular a receita do mês que o Sr. Miyagi escolheu
-# 3. Criar uma função que permita ao Sr. Miyagi introduzir um novo registro
-# 4. Analisar se existe melhorias que podem ser feitas pensando na felicidade do Sr. Miyagi
-
-# Explicação do exercício:
-
+<<xercicio_Daniela
 # Na lojinha do Sr. Miyagi, ele armazena o faturamento e os custos mensais manualmente em uma planilha. 
 # Porém, o Sr. Miyagi precisa saber se ele está realmente lucrando ou se seu negócio está indo mal.
-# Para ajudar-lo, ele nos pediu para que a gente criasse um pequeno programa em python que fosse capaz de calcular a receita de acordo com um mês. 
-# Vamos ajuda-lo?
-
-# Digitar um mês e receber a receita desse mês.
-# 1º: Inserir o mês que ele quer;
-# 2º: Pegar no banco de dados o registro que a gente quer;
-# 3º: Calcular a diferença entre  lucro e gasto pra dar a RECEITA;
-# 4º: Mostrar o resultado para o resultado
-
-
-def menu():   
-    print("-----MENU LOJINHA-----")
+# Para ajudar-lo, ele nos pediu para que a gente criasse um pequeno programa em python que fosse capaz de calcular a receita de acordo com um mês.
+# Va    print("-----MENU LOJINHA-----")
     print("Adicionar novo registro - 1")
     print("Calcular faturamento - 2")
 
@@ -103,12 +88,90 @@ def mostrar_receita():
     print(f"A soma das suas receitas é de {valor_total}")
     print(f"{ano} foi o ano mais lucrativo da Lojinha do Sr Myiagi, para o mês {mes}.")
 
-         
+    print("Opção escolhida: mostrar_receita=======
+def menu():
+    while True:
+        print("------ MENU LOJINHA ---------")
+        print("Adicionar novo registro - 1")
+        print("Calcular faturamento - 2")
+        print("Sair - 0")
+        
+        opt = input("Digite a opção desejada:")
+        
+        if opt != "1" and opt != "2" and opt != "0":
+            print("Digite uma opção válida")
+            continue
+            
+        
+        if opt == "1":
+            adicionar_registro()
+        elif opt == "2":
+            mostrar_receita()
+        elif opt == "0":
+            break
+        
+        
+'''
 
-    # print("Opção escolhida: mostrar_receita")
-menu()
+Digitar um mês e receber a receita desse mês
+1 - captar o mês que ele quer OK
+2 - buscar no dataset o registro com o mes escolhido pelo usuário OK
+3 - nos registros encontrados, calcular a diferença entre o lucro e os gastos ( receita )
+4 - Exibir o resultado para o usuário
+-----------------------------
+3 receitas - 3 anos
 
+maior_receita = 400 / ano 2023
 
-# el = linha
-# get = pega o elemento daquela linha
+1 2022 - 200 
+2 2023 - 400
+3 2024 - 400
 
+1 - Verificar a receita e o ano.
+2 - se a receita for maior do que o último valor , substitua. Senão , permanece igual
+'''
+
+def adicionar_registro():
+    ano = int(input("digite o ano correspondente: "))
+    mes = input("digite o mês correspondente: ")
+    lucro = int(input("digite o lucro neste mês: "))
+    gastos = int(input("digite os gastos deste mês: "))
+    
+    novo_registro = {
+        "ano": ano,
+        "mes": mes,
+        "lucro": lucro,
+        "gastos": gastos
+    }
+
+    dataset.append(novo_registro)
+    
+  
+def mostrar_receita():
+    mes = input("digite o mês que gostaria saber a receita: ")
+    valor_total = 0
+    receita_maior = 0
+    receita_menor = 0
+    ano = 0
+    ano_menor_receita = 0
+    
+    
+    for el in dataset:
+        mes_el = el.get("mes")
+        
+        if mes_el == mes:
+            receita = el.get("lucro") - el.get("gastos")
+            valor_total += receita
+            
+            if receita < receita_maior:
+                receita_menor = receita
+                ano_menor_receita = el.get("ano")
+            
+            if receita > receita_maior:
+                receita_maior = receita
+                ano = el.get("ano")
+    
+    print(f"A soma das suas receitas é: {valor_total}")
+    print(f"O ano {ano} foi o ano mais lucrativo desse mês, e o valor foi {receita_maior}")
+    print(f"O ano {ano_menor_receita} foi o ano menos lucrativo desse mês, e o valor foi {receita_menor}")
+                   
