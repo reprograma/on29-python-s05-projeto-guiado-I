@@ -37,43 +37,6 @@ dataset = [
     {'ano_receita': 2024, 'mes_receita': '12', 'faturamento': 39303, 'despesas': 14418}
 ]
 
-'''
-
-1. [ ] Use o dataset <b>dataset_casa</b> que se encontra no material adicional no classroom ou [no arquivo da pasta material](../../material/dataset_casa.py) e cole para o seu arquivo python - <b>assim como fizemos em aula, se lembra?</b>
-2. [ ] Crie um menu que onde seja possível fazer as seguintes opções:
-      - [ ] Adicionar um novo registro , contendo todos os dados necessários, <b>seguindo o modelo dos registros do dataset</b>
-      - [ ] Calcular a receita do ano escolhido pelo usuário
-         - [ ] Exibir também qual foi o mês que teve mais lucro e o que teve mais despesa
-      - [ ] Mostrar qual ano teve a melhor receita e qual teve a pior
-      - [ ] Uma opção de saída
-3. [ ] Adicione uma condição para caso o usuário não digite uma opção válida no menu.
-
-Boa sorte!
-
-'''
-
-
-'''
-
-O arquivo "loja_resposta.py" está calculando o lucro e não a receita da loja.
-
-"Faturamento é o valor total obtido com as vendas de produtos e/ou serviços na empresa
-em um determinado período, sem considerar os custos."
-
-"O faturamento representa o valor total das vendas ou prestação de serviços registradas 
-em documentos fiscais, antes de deduções. Já a receita é o valor líquido que efetivamente 
-entra no caixa da empresa, após deduzir impostos, descontos e outras deduções."
-
-"Receita total é o montante que um empresa receb pela venda de sua produção"
-
-"Custo total é o valor de mercado dos insumos que uma empresa usa na produção"
-
-"lucro é a receita total menos o custo total"
-
-'''
-
-
-
 def menu():
     while True:
         print("------------------- LOJINHA TRANS -------------------")
@@ -174,6 +137,7 @@ def calcular_lucro_ano():
     ano_escolhido = int(input("Digite o ano que gostaria de saber o lucro: "))
     valor_lucro_ano = 0
     mes_maior_lucro = ""
+    mes_menor_lucro = ""
     menor_lucro_mes = 0
     maior_lucro_mes = 0
 
@@ -189,11 +153,9 @@ def calcular_lucro_ano():
             if lucro_registro < menor_lucro_mes:
                 menor_lucro_mes = lucro_registro
                 mes_menor_lucro = dados.get("mes_receita")
-            
-        
-            
+
     print(f"O lucro para o ano {ano_escolhido} foi {valor_lucro_ano}")
     print(f"O mês de maior lucro foi {mes_maior_lucro} com {maior_lucro_mes}")
-
+   
 
 menu()
