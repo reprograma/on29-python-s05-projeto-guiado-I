@@ -153,7 +153,7 @@ def calcular_lucro_ano():
             if lucro_registro < menor_lucro_mes:
                 menor_lucro_mes = lucro_registro
                 mes_menor_lucro = dados.get("mes_receita")
-
+                
     print(f"O lucro para o ano {ano_escolhido} foi {valor_lucro_ano}")
     print(f"O mês de maior lucro foi {mes_maior_lucro} com {maior_lucro_mes}")
    
